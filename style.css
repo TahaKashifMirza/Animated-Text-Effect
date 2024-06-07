@@ -1,0 +1,48 @@
+:root {
+    --_fw-200: 200;
+    --_fw-400: 400;
+    --_fw-700: 700;
+    --_fw-900: 900;
+    --_clr-50: hsl(0, 0%, 50%);
+    --_clr-400: hsl(0, 0%, 40%);
+    --_clr-700: hsl(0, 0%, 30%);
+    --_clr-900: hsl(0, 0%, 20%);
+}
+
+.text {
+    font-size: clamp(2rem, calc(2rem + 3.5vw), 8rem);
+    color: var(--_clr-50);
+    user-select: none;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.text .split-char {
+    font-weight: var(--_fw-200);
+    transition: font-weight 0.5s ease, color 0.5s ease;
+}
+
+.text .split-char:hover {
+    font-weight: var(--_fw-900);
+    color: var(--_clr-900);
+}
+
+.text .split-char:hover + .split-char {
+    font-weight: var(--_fw-700);
+    color: var(--_clr-700);
+}
+
+.text .split-char:hover + .split-char + .split-char {
+    font-weight: var(--_fw-400);
+    color: var(--_clr-400);
+}
+
+.text .split-char:hover ~ .split-char {
+    font-weight: var(--_fw-700);
+    color: var(--_clr-700);
+}
+
+.text .split-char:hover ~ .split-char ~ .split-char {
+    font-weight: var(--_fw-400);
+    color: var(--_clr-400);
+}
